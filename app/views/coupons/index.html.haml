@@ -1,0 +1,18 @@
+- @coupons.each do |d|
+  .col-sm-4.col-xs-6
+    .panel.panel-default
+      .panel-thumbnail
+        %img.img-responsive{:src => "//placehold.it/450X300/DD66DD/FFF"}/
+      .panel-body
+        %p.lead 
+          = d.title
+        %p 
+        = d.description
+        %p
+        = d.sale_offer
+        %p
+          %img{:height => "28px", :src => "https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s28", :width => "28px"}
+            %img{:height => "28px", :src => "https://lh5.googleusercontent.com/-AQznZjgfM3E/AAAAAAAAAAI/AAAAAAAAABA/WEPOnkQS_20/s28-c-k-no/photo.jpg", :width => "28px"}
+
+
+
