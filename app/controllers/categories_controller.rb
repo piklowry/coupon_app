@@ -18,6 +18,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @coupon = Coupon.where('category_id = ?' , @category.id)
   end
 
   def edit
@@ -29,7 +30,7 @@ class CategoriesController < ApplicationController
     if @category.update_attributes(category_params)
       redirect_to categories_path
     else
-      redirect_to category_path
+      redirect_to edit_category_path
     end
   end
 
@@ -61,4 +62,4 @@ class CategoriesController < ApplicationController
     params.require(:category).permit!
   end 
 end
-end
+
