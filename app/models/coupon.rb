@@ -5,6 +5,7 @@ class Coupon < ActiveRecord::Base
 	validates :sale_offer, presence: true
 	belongs_to :user
 	has_many :categories, :through => :users
+	
 	mount_uploader :coupon_pic, CouponPicUploader
 end
 

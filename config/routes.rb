@@ -3,9 +3,12 @@ CouponApp::Application.routes.draw do
     collection do
       get :results
       get :search
-      get :download_coupon_pic
     end
+
+    member do 
+      get :download_coupon_pic 
   end
+end
 
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
