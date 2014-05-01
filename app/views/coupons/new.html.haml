@@ -1,5 +1,5 @@
 %h2 New Coupon
 =form_for @new_coupon, url: coupons_path do |f|
   =render "form", f: f
-
+  %br
   = f.submit "New Coupon", :class => "button btn btn-primary"
