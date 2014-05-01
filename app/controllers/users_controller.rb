@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def new
     @new_user = User.new
+    @new_user.coupons.build
   end
 
   def create
