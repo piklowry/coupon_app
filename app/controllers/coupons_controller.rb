@@ -56,7 +56,7 @@ class CouponsController < ApplicationController
 
   def download_coupon_pic
     @coupon = Coupon.find(params[:id])
-    file = @coupon.coupon_pic_path
+    file = @coupon.coupon_pic
     send_file file.path
   end
 
