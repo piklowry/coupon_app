@@ -1,24 +1,23 @@
-%h1 All Users
-
 - @users.each do |u|
   .col-sm-4.col-xs-6
     .panel.panel-default
       .panel-thumbnail
-        %img.img-responsive{:src => "//placehold.it/450X300/DD66DD/FFF"}/
       .panel-body
         %p.lead 
+        = "Name:"
         = u.name
         %p 
+        = "Email:"
         = u.email
         %p
+        = "Username:"
         = u.username
         %p
-        = link_to 'Show', user_path(user)
-        = link_to 'Edit', edit_user_path(user)
-        = link_to 'Delete', user_path(user), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+        = link_to 'Show', user_path(u)
+        = link_to 'Edit', edit_user_path(u)
+        = link_to 'Delete', user_path(u), :method => :delete, :data => { :confirm => 'Are you sure?' }
 %br
 
-= button_to 'Add New User', new_user_path, method: "get"
-%br
-%br
-= button_to 'See All Users', users_path, method: "get"
+
