@@ -122,17 +122,13 @@ h3,h4,h5 {
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
           <i class="glyphicon glyphicon-search"></i>
           </button>
-      
+
+      <%= render "search"%>
         </div>
+        
+        
         <div class="collapse navbar-collapse" id="navbar-collapse1">
-          <form class="navbar-form pull-left">
-              <div class="input-group" style="max-width:470px;">
-                <input type="text" class="form-control" placeholder="Search Coupons" name="srch-term" id="srch-term">
-                <div class="input-group-btn">
-                  <button class="btn btn-default btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-              </div>
-          </form>
+        
           <ul class="nav navbar-nav navbar-right">
              <li><a href="/coupons" target="_ext">Login</a></li>
              <li>
