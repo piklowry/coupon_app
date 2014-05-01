@@ -16,4 +16,9 @@
 			= f.file_field :coupon_pic
 			- f.hidden_field :coupon_pic
 			%br
+			Select Category
+			= f.select :category_id, Category.all.collect {|u| [u.kind_of_coupon, u.id]} , :include_blank => true
+			%br
+			
+			
 			= f.submit
