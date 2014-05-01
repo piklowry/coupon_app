@@ -3,6 +3,7 @@ class Coupon < ActiveRecord::Base
 	validates :title, presence: true
 	validates :description, presence: true
 	validates :sale_offer, presence: true
+	
 	belongs_to :user
 	has_many :categories, :through => :users
 	
