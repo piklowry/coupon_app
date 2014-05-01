@@ -2,14 +2,19 @@
   .col-sm-4.col-xs-6
     .panel.panel-default
       .panel-thumbnail
-        %img.img-responsive{:src => "//placehold.it/450X300/DD66DD/FFF"}/
+
+        = image_tag d.coupon_pic.url ,:style => "max-width: 100%"
+
       .panel-body
         %p.lead 
         = d.title
         %p 
-        = d.description
+          = d.description
         %p
-        = d.sale_offer
+
+          = d.sale_offer
+          = link_to "Download Photo", download_coupon_pic_coupon_path(d)
+      
 
 
 
