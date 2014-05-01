@@ -1,23 +1,23 @@
 
 
-	%p
-	= f.label :title
-	= f.text_field :title
-	%br
-	= f.label :description
-	= f.text_field :description
-	%br
-	= f.label :sale_offer
-	= f.text_field :sale_offer
-	%br
-	= f.label :company_name
-	= f.text_field :company_name
-	%br
-	= f.file_field :coupon_pic
-	- f.hidden_field :coupon_pic
-	%br
+%p
+= f.label :title
+= f.text_field :title
+%br
+= f.label :description
+= f.text_field :description
+%br
+= f.label :sale_offer
+= f.text_field :sale_offer
+%br
+= f.label :company_name
+= f.text_field :company_name
+%br
+= f.file_field :coupon_pic
+- f.hidden_field :coupon_pic
+%br
 
-	Select Category
-	= f.select :category_id, Category.all.collect {|u| [u.kind_of_coupon, u.id]} , :include_blank => true
-	%br
+Select Category
+= f.select :category_id, Category.all.collect {|u| [u.kind_of_coupon, u.id]} , :include_blank => true
+%br
 
