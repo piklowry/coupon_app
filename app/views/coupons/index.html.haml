@@ -12,9 +12,12 @@
           = d.description
         %p
 
-          = d.sale_offer
-          = link_to "Download Photo", download_coupon_pic_coupon_path(d)
-      
+        = d.sale_offer
+        %p
+        = link_to 'Edit', edit_coupon_path(d), method: "get"
+        = "|"
+        = link_to 'Delete', coupon_path(d), :action => "delete", :method => :delete
+
 
 
 
