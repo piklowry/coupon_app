@@ -6,6 +6,6 @@ class Coupon < ActiveRecord::Base
 	belongs_to :user
 	has_many :categories, :through => :users
 	mount_uploader :coupon_pic, CouponPicUploader
-	accepts_nested_attributes_for :user
+	
 end
 

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	
 	def index 
-    @users = Users.all
+    @users = User.all
   end
 
   def new
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit!
+    params.require(:user).permit(:name, :email, :username, coupons_attributes: [:title, :description, :company_name, :sale_offer, :coupon_pic])
   end 
 end
 

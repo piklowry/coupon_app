@@ -16,14 +16,7 @@ ActiveRecord::Schema.define(version: 20140430192456) do
   create_table "categories", force: true do |t|
     t.string   "kind_of_coupon"
     t.integer  "rating"
-<<<<<<< HEAD
-    t.boolean  "availability", default: true
-=======
-
     t.boolean  "availability",   default: true
-
-    
->>>>>>> master
     t.datetime "created_at"
     t.datetime "updated_at"
   end
