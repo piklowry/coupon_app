@@ -5,7 +5,7 @@
   = f.text_field :title, class: "form-control"
   = f.label :description
   = f.text_field :description, class: "form-control"
-  = f.submit "EDIT"
+  = f.submit "EDIT" 
   %br
   = link_to "DELETE",  {:action => "destroy", :id => "#{@coupon.id}"}, :method => :delete, :class => "icon-delete", :confirm => "Are you sure"
 

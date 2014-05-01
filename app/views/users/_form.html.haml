@@ -1,29 +1,30 @@
 = f.label :name
 = f.text_field :name
-%br
+%p
 = f.label :username
 = f.text_field :username
-%br
+%p
 = f.label :email
 = f.text_field :email
 %br
-%h2 New Coupon
-= f.fields_for :coupon do |ff|
-	%p
-	=ff.label :title
-	=ff.text_field :title
-	%br
-	=ff.label :description
-	=ff.text_field :description
-	%br
-	=ff.label :company_name
-	=ff.text_field :company_name
-	%br
-	=ff.label :sale_offer
-	=ff.text_field :sale_offer
-	%br
-	=ff.file_field :coupon_pic
-	-ff.hidden_field :coupon_pic
-	%br
+/ %br
+/ %h2 New Coupon
+/ = f.fields_for :coupon do |ff|
+/ 	%p
+/ 	=ff.label :title
+/ 	=ff.text_field :title
+/ 	%br
+/ 	=ff.label :description
+/ 	=ff.text_field :description
+/ 	%br
+/ 	=ff.label :company_name
+/ 	=ff.text_field :company_name
+/ 	%br
+/ 	=ff.label :sale_offer
+/ 	=ff.text_field :sale_offer
+/ 	%br
+/ 	=ff.file_field :coupon_pic
+/ 	-ff.hidden_field :coupon_pic
+/ 	%br
 
 
