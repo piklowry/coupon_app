@@ -44,14 +44,11 @@ class CouponsController < ApplicationController
 
   def search
     
-    @coupons = Coupon.search(params[:search])
-    # render search_coupons_path
+    @search_results = Coupon.search(params[:search])
+    render results_coupons_path
   end
 
 
-  def results
-    @search_results
-  end
 
   def download_coupon_pic
     @coupon = Coupon.find(params[:id])
