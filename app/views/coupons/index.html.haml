@@ -10,6 +10,10 @@
         = d.description
         %p
         = d.sale_offer
+        %p
+        = link_to 'Edit', edit_coupon_path(d), method: "get"
+        = "|"
+        = link_to 'Delete', coupon_path(d), :action => "delete", :method => :delete
 
 
 

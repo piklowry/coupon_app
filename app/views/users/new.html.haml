@@ -3,11 +3,11 @@
 		%p
 			= f.label :name
 			= f.text_field :name
-			%br
+		%p
 			= f.label :email
 			= f.email_field :email
-			%br
+		%p
 			= f.label :username
 			= f.text_field :username
-			%br
-			= f.submit
+		%p
+			= f.submit :class => "button btn btn-primary"
