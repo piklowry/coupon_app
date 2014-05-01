@@ -13,7 +13,11 @@
         = "Username:"
         = u.username
         %p
-        = link_to 'Edit', edit_user_path(u), method: "get"
-        = "|"
-        = link_to 'Delete', user_path(u), :action => "delete", :method => :delete
+
+
+        = link_to 'Show', user_path(u)
+        = link_to 'Edit', edit_user_path(u)
+        = link_to 'Delete', user_path(u), :method => :delete, :data => { :confirm => 'Are you sure?' }
+%br
+
 

@@ -10,6 +10,7 @@ class Coupon < ActiveRecord::Base
 	mount_uploader :coupon_pic, CouponPicUploader
 
 
+
 def self.search(params)
 		name = params[:name]
 	  search = Coupon.all
@@ -18,5 +19,6 @@ def self.search(params)
 		end
 		search
 	end
+
 end
 

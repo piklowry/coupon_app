@@ -6,6 +6,7 @@ class CouponsController < ApplicationController
 
   def new
     @new_coupon = Coupon.new
+    
   end
 
   def create
@@ -60,6 +61,6 @@ class CouponsController < ApplicationController
   private
 
   def coupon_params
-    params.require(:coupon).permit!
+    params.require(:coupon).permit(:title, :description, :company_name, :sale_order, :coupon_pic)
   end 
 end

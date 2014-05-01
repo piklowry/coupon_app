@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
 	validates :username, presence: true
 	has_many :coupons
 	has_many :categories, :through => :coupons
+	accepts_nested_attributes_for :coupons
 end
