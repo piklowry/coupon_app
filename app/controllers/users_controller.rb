@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :username, coupons_attributes: [:title, :description, :company_name, :sale_offer, :coupon_pic])
+    params.require(:user).permit(:name, :email, coupons_attributes: [:title, :description, :company_name, :sale_offer, :coupon_pic])
   end 
 end
 

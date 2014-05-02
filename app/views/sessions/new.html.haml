@@ -1,0 +1,17 @@
+%h1 Login
+
+= form_tag sessions_path do 
+  = label_tag :email
+  = text_field_tag :email, params[:email]
+  = password_field_tag :password
+  %br
+  = submit_tag "Login"
+
+  = if current_user
+    = link_to "Log Out", logout_path
+  / = else 
+  /   = link_to "Log In", login_path
+
+
+- flash.each do |name, msg|
+  = content_tag :div, msg, :id => "flash_#{name}"

@@ -13,16 +13,19 @@
         Description:
         = d.description
         %p
-        Sale Offer:
-        = d.sale_offer
-        %p
-        Expiration Date:
-        = d.expiration_date
-        %p
-        = link_to 'Edit', edit_coupon_path(d), method: "get" 
-        = "| "
-        = link_to 'Delete', coupon_path(d), :action => "delete", :method => :delete
-        %br
+
+
+          %a{:href=>"/coupons/#{d.id}/edit"} EDIT
+          %a{:href=>"/coupons/#{d.id}/edit"} DELETE
+          %br
+          = link_to "Download Photo", download_coupon_pic_coupon_path(d)
+          
+            
+              
+              
+          
+      
+
 
 
 

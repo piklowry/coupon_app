@@ -10,6 +10,9 @@ CouponApp::Application.routes.draw do
     end
   end
 
+  get "login" => "sessions#new"
+  get "logout" => "sessions#destroy"
+  resources :sessions
   resources :users
   resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
