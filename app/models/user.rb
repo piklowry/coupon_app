@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
 	has_many :coupons
 	has_many :categories, :through => :coupons
 	accepts_nested_attributes_for :coupons
+	has_secure_password
+	validates_presence_of :email
+	validates_uniqueness_of :email
 end
