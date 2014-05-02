@@ -11,6 +11,11 @@ class Coupon < ActiveRecord::Base
 
 
 
+	def self.ending_soon
+		where('expiration_date > ? AND expiration_date  < ? ' , Date.today , 3.days.from_now)
+	end
+
+
 def self.search(params)
 		name = params[:name]
 	  search = Coupon.all
