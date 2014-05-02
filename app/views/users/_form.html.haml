@@ -19,6 +19,8 @@
 	=ff.label :company_name
 	=ff.text_field :company_name
 	%br
+	=ff.label :category_id
+	=ff.select :category_id, Category.all.collect {|d| [d.kind_of_coupon, d.id]}, include_blank: true
 	=ff.label :sale_offer
 	=ff.text_field :sale_offer
 	%br
