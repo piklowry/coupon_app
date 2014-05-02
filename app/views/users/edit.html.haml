@@ -2,4 +2,7 @@
 	= render 'form', f: f
 
 %br
-= link_to 'Back', users_path, method: "get"
+= link_to 'Save', users_path, method: "get", :class => "button btn btn-primary" 
+%br
+%br
+= link_to 'Delete', users_path, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "button btn btn-primary" 

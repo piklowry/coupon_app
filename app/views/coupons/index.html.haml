@@ -13,11 +13,9 @@
         Description:
         = d.description
         %p
-
-
           %a{:href=>"/coupons/#{d.id}/edit"} EDIT
           = "|"
-          %a{:href=>"/coupons/#{d.id}/edit"} DELETE
+          %a{:href=>"/coupons"} DELETE
           = "|"
           = link_to "Download Photo", download_coupon_pic_coupon_path(d)
           

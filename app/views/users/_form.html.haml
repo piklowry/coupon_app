@@ -1,32 +1,38 @@
 = f.label :name
 = f.text_field :name
 %p
-/ = f.label :username
-/ = f.text_field :username
-/ %p
 = f.label :email
 = f.text_field :email
-%br
-%h2 New Coupon
-= f.fields_for :coupons do |ff|
-	%p
-	=ff.label :title
-	=ff.text_field :title
-	%br
-	=ff.label :description
-	=ff.text_field :description
-	%br
-	=ff.label :company_name
-	=ff.text_field :company_name
-	%br
-	=ff.label :category_id
-	=ff.select :category_id, Category.all.collect {|d| [d.kind_of_coupon, d.id]}, include_blank: true
-	=ff.label :sale_offer
-	=ff.text_field :sale_offer
-	%br
-	=ff.file_field :coupon_pic
-	-ff.hidden_field :coupon_pic
-	%br
+%p
+= f.label :username
+= f.text_field :username
+%p
+= f.label :password
+= f.text_field :username
+%p
+= f.label :password_confirmation
+= f.text_field :username
+%p
+/ %h2 New Coupon
+/ = f.fields_for :coupons do |ff|
+/ 	%p
+/ 	=ff.label :title
+/ 	=ff.text_field :title
+/ 	%br
+/ 	=ff.label :description
+/ 	=ff.text_field :description
+/ 	%br
+/ 	=ff.label :company_name
+/ 	=ff.text_field :company_name
+/ 	%br
+/ 	=ff.label :category_id
+/ 	=ff.select :category_id, Category.all.collect {|d| [d.kind_of_coupon, d.id]}, include_blank: true
+/ 	=ff.label :sale_offer
+/ 	=ff.text_field :sale_offer
+/ 	%br
+/ 	=ff.file_field :coupon_pic
+/ 	=ff.file_field :coupon_pic
+/ 	%br
 
 
 

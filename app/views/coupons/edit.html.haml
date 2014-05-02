@@ -12,9 +12,8 @@
   = f.label :category_id
   = f.select :category_id, Category.all.collect {|u| [u.kind_of_coupon, u.id]} , :include_blank => true
   = f.file_field :coupon_pic
-  = f.hidden_field :coupon_pic
   %br
-  = f.submit "EDIT", :class => "button btn btn-primary" 
+  = f.submit "SAVE", :class => "button btn btn-primary" 
   %br
   %br
   = link_to "DELETE",  {:action => "destroy", :id => "#{@coupon.id}"}, :method => :delete, :class => "button btn btn-primary", :confirm => "Are you sure"
