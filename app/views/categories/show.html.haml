@@ -2,3 +2,16 @@
 	%h1
 		=@category.kind_of_coupon
 
+- @coupon.each do |c|
+	.col-sm-4.col-xs-6
+		.panel.panel-default
+			.panel-thumbnail
+				= image_tag c.coupon_pic.url ,:style => "max-width: 100%"
+			.panel-body
+				%p.lead 
+					= c.title
+				%p 
+				= c.description
+				%p
+				= c.sale_offer
+

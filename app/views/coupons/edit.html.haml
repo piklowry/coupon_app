@@ -1,0 +1,13 @@
+%h3 Edit or Delete
+
+= form_for @coupon, url: "/coupons/#{@coupon.id}" do |f|
+  = f.label :title
+  = f.text_field :title, class: "form-control"
+  = f.label :description
+  = f.text_field :description, class: "form-control"
+  = f.submit "EDIT" 
+  %br
+  = link_to "DELETE",  {:action => "destroy", :id => "#{@coupon.id}"}, :method => :delete, :class => "icon-delete", :confirm => "Are you sure"
+
+
+

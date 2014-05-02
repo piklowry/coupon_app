@@ -45,18 +45,15 @@ class CouponsController < ApplicationController
 
   def search
     
-    @coupons = Coupon.search(params[:search])
-    # render search_coupons_path
+    @search_results = Coupon.search(params[:search])
+    render results_coupons_path
   end
 
 
-  def results
-    @search_results
-  end
 
   def download_coupon_pic
     @coupon = Coupon.find(params[:id])
-    file = @coupon.coupon_pic_path
+    file = @coupon.coupon_pic
     send_file file.path
   end
 
@@ -64,6 +61,6 @@ class CouponsController < ApplicationController
   private
 
   def coupon_params
-    params.require(:coupon).permit(:title, :description, :company_name, :sale_order, :coupon_pic)
+    params.require(:coupon).permit!
   end 
 end
