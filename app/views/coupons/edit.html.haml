@@ -1,13 +1,20 @@
-%h3 Edit or Delete
+%h3 Edit Coupon
 
 = form_for @coupon, url: "/coupons/#{@coupon.id}" do |f|
   = f.label :title
   = f.text_field :title, class: "form-control"
   = f.label :description
   = f.text_field :description, class: "form-control"
-  = f.submit "EDIT" 
+  = f.label :sale_offer
+  = f.text_field :sale_offer, class: "form-control"
+  = f.label :company_name
+  = f.text_field :company_name, class: "form-control"
+  = f.label :category_id
+  = f.select :category_id, Category.all.collect {|u| [u.kind_of_coupon, u.id]} , :include_blank => true
+  = f.file_field :coupon_pic
+  = f.hidden_field :coupon_pic
   %br
-  = link_to "DELETE",  {:action => "destroy", :id => "#{@coupon.id}"}, :method => :delete, :class => "icon-delete", :confirm => "Are you sure"
-
-
-
+  = f.submit "EDIT", :class => "button btn btn-primary" 
+  %br
+  %br
+  = link_to "DELETE",  {:action => "destroy", :id => "#{@coupon.id}"}, :method => :delete, :class => "button btn btn-primary", :confirm => "Are you sure"
