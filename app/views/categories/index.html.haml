@@ -1,11 +1,8 @@
-- @categories.each do |c|
-	=link_to  "#{c.kind_of_coupon}" , category_path(c)
+%h1 
+	- @categories.each do |c|
+		=link_to  "#{c.kind_of_coupon}" , category_path(c)
+		%br
 	%br
-
-%br
-%br
-%br
-%br
-=link_to "Add More", new_category_path
-= "|"
-=link_to "Home Page", users_path
+	=link_to "Add Category", new_category_path, :class => "button btn btn-primary"
+	%br
+	=link_to "Home Page", coupons_path, :class => "button btn btn-primary"
