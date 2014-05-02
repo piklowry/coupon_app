@@ -7,16 +7,22 @@
 
       .panel-body
         %p.lead 
+        Title:
         = d.title
-        %p 
+        %p
+        Description:
         = d.description
         %p
+        Sale Offer:
         = d.sale_offer
+        %p
+        Expiration Date:
+        = d.expiration_date
         %p
         = link_to 'Edit', edit_coupon_path(d), method: "get" 
         = "| "
         = link_to 'Delete', coupon_path(d), :action => "delete", :method => :delete
-
+        %br
 
 
 
