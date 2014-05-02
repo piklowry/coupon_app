@@ -8,7 +8,7 @@
 = f.text_field :email
 %br
 %h2 New Coupon
-= f.fields_for :coupon do |ff|
+= f.fields_for :coupons do |ff|
 	%p
 	=ff.label :title
 	=ff.text_field :title
