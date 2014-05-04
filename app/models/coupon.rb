@@ -5,9 +5,17 @@ class Coupon < ActiveRecord::Base
 	validates :sale_offer, presence: true
 	
 	belongs_to :user
-	has_many :categories, :through => :users
+	has_many :categories, :through => :user
 	
 	mount_uploader :coupon_pic, CouponPicUploader
+
+	def self.expires_after(date)
+		where('expiration_date > ?' , date)
+	end
+
+	# def self.categories_search(kind_of_coupon)
+	# 	joins(:categories).where('categories.kind_of_coupon LIKE ?' , kind_of_coupon)
+	# end
 
 
 
@@ -17,10 +25,24 @@ class Coupon < ActiveRecord::Base
 
 
 def self.search(params)
-		name = params[:name]
+		name = params[:search]
+		date = params[:expiration_date]
+		kind_of_coupon = params[:kind_of_coupon]
+
 	  search = Coupon.all
 		if name.present?
     	search = search.where('coupons.title LIKE ?', "%#{name}%")
+    	
+		end
+
+		if date.present?
+			search = search.expires_after(date)
+			
+		end
+
+		if kind_of_coupon.present?
+			search = search.categories_search(kind_of_coupon)
+			
 		end
 		search
 	end

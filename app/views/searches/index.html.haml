@@ -1,0 +1,12 @@
+
+%h1 Search 
+= form_tag  search_searches_path, method: "get" do
+	
+		= label_tag "name or description"
+		= text_field_tag "search[search]"
+		= label_tag "category"
+		=	select_tag 'search[kind_of_coupon]', options_for_select(Category.pluck(:kind_of_coupon)),include_blank: true
+		
+		= label_tag "look for coupons expiring after:"
+		= date_field_tag "search[expiration_date]"	
+		= submit_tag "search"
